@@ -9,7 +9,7 @@ import { Users, UserPlus } from 'lucide-react';
 
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE_URL = 'http://localhost:5000/students';
+const API_BASE_URL = ' https://student-management-system-lfay.onrender.com/students';
 
 export default function App() {
   const [students, setStudents] = useState([]);
