@@ -11,7 +11,7 @@ export default function StudentCard({ student, handleEditInit, handleDelete }) {
       <div className="flex gap-4 items-start mb-4">
         <div className="w-25 h-25 rounded-lg bg-slate-900 border border-slate-700 overflow-hidden flex items-center justify-center shrink-0">
           {student.photo_url ? (
-            <img src={`http://localhost:5000${student.photo_url}`} alt="avatar" className="w-full h-full object-cover" />
+            <img src={`https://student-management-system-1fay.onrender.com${student.photo_url}`} alt="avatar" className="w-full h-full object-cover" />
           ) : (
             <User className="w-8 h-8 text-slate-600" />
           )}
