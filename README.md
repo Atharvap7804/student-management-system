@@ -111,5 +111,6 @@ Base URL: `http://localhost:5000`
 ## Notes
 
 - The backend uses `uploads/` to store uploaded student photos.
+- For production, consider using a cloud storage service for uploaded files.(imagekit.io considered in this project)
 - The frontend uses route-based styling so `/` supports hidden scrollbar scrolling and `/add-student` is fixed.
 - Update the API base URL in `frontend/src/App.jsx` if your backend runs on a different host or port.
