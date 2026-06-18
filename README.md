@@ -80,6 +80,34 @@ npm run dev
 - `npm run preview` (frontend) - previews the built frontend
 - `npm run lint` (frontend) - lints frontend files
 
+## API Endpoints
+
+Base URL: `http://localhost:5000`
+
+- `GET /students`
+  - Returns paginated student records.
+  - Query parameters:
+    - `search` — search by name, course, or admission ID
+    - `course` — filter by course
+    - `page` — page number
+    - `limit` — number of records per page
+
+- `GET /students/:id`
+  - Returns a single student by admission number.
+
+- `POST /students`
+  - Creates a new student record.
+  - Request type: `multipart/form-data`
+  - Fields: `name`, `course`, `year`, `date_of_birth`, `email`, `mobile_number`, `gender`, `address`, `photo`
+
+- `PUT /students/:id`
+  - Updates an existing student record.
+  - Request type: `multipart/form-data`
+  - Fields: `name`, `course`, `year`, `date_of_birth`, `email`, `mobile_number`, `gender`, `address`, `photo` (optional)
+
+- `DELETE /students/:id`
+  - Deletes a student record by admission number.
+
 ## Notes
 
 - The backend uses `uploads/` to store uploaded student photos.
