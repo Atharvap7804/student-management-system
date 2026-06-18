@@ -1,23 +1,21 @@
-const {Pool} = require('pg');
+const { Pool } = require('pg');
 require('dotenv').config();
 
+
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
-})
+    connectionString: process.env.DATABASE_URL,
+    ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false
+});
 
-//verify the connection
-pool.connect((err,client,release)=>{
-  if(err){
-   return console.log('Error acquiring client', err.stack)
+// Verify the connection
+pool.connect((err, client, release) => {
+  if (err) {
+    return console.log('❌ Error acquiring client from cloud database pool:', err.stack);
   }
-  console.log('Connected to the database');
+  console.log('✅ Connected to the database successfully over cloud architecture');
   release();
-})
+});
 
-module.exports={
+module.exports = {
   query: (text, params) => pool.query(text, params),
-}
+};
